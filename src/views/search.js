@@ -1,9 +1,22 @@
 var SearchView = Backbone.View.extend({
-  
-  el: '.search-bar',
+
+  events: {
+    'click .btn': 'findVideos',
+  },
+
+  findVideos: function() {
+    //take the key input .form-control
+    // .fetch => send ? 
+    this.collection.search($('.form-control').text());
+
+
+
+  },
 
   initialize: function() {
+    console.log(this.collection)
     this.render();
+
   },
 
   render: function() {
